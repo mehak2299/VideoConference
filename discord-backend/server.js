@@ -32,3 +32,12 @@ mongoose
     console.log("database connection failed. Server not started");
     console.error(err);
   });
+  if(process.env.PORT=="production"){
+    app.use(express.static("discord-frontend/build"));
+    //const path=require("path");
+   // app.get("*",(req,res)=>{
+     // res.sendFile(path.resolve(__dirname,'client','build','index.html'));
+    //})
+  }
+  
+  
