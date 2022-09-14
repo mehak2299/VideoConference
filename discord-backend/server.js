@@ -8,7 +8,7 @@ const socketServer = require("./socketServer");
 const authRoutes = require("./routes/authRoutes");
 const friendInvitationRoutes = require("./routes/friendInvitationRoutes");
 
-const PORT = process.env.PORT || process.env.API_PORT;
+const PORT = process.env.PORT ||5000;
 
 const app = express();
 app.use(express.json());
@@ -32,12 +32,13 @@ mongoose
     console.log("database connection failed. Server not started");
     console.error(err);
   });
+ 
   if(process.env.NODE_ENV=="production"){
     app.use(express.static("discord-frontend/build"));
-    //const path=require("path");
-   // app.get("*",(req,res)=>{
-     // res.sendFile(path.resolve(__dirname,'client','build','index.html'));
-    //})
+    const path=require("path");
+   app.get("*",(req,res)=>{
+     res.sendFile(path.resolve(__dirname,'discord-frontend','build','index.html'));
+    })
   }
   
   
