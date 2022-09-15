@@ -34,10 +34,10 @@ mongoose
   });
  
   if(process.env.NODE_ENV=="production"){
-    app.use(express.static("discord-frontend/build"));
+    app.use(express.static("ui-code/build"));
     const path=require("path");
    app.get("*",(req,res)=>{
-     res.sendFile(path.resolve(__dirname,'discord-frontend','build','index.html'));
+     res.sendFile(path.resolve(__dirname,'ui-code','build','index.html'));
     })
   }
   

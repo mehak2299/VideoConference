@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js", 
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix discord-frontend && npm run build --prefix discord-frontend "
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix ui-code && npm run build --prefix ui-code"
   },
   "author": "",
   "license": "ISC",
